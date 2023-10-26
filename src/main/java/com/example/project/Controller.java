@@ -16,7 +16,7 @@ import org.springframework.web.client.RestTemplate;
 public class Controller {
 
     private static final Logger logger = LoggerFactory.getLogger(Controller.class);
-    private RestTemplate restTemplate;
+    //private RestTemplate restTemplate;
 
     @Autowired
     private Environment environment;
@@ -27,17 +27,17 @@ public class Controller {
     @Value("${spring.application.name}")
     private String applicationName;
 
-    public Controller(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
-    }
+   // public Controller(RestTemplate restTemplate) {
+        //this.restTemplate = restTemplate;
+    //}
 
     @GetMapping("/method1")
     public ResponseEntity method1() {
         System.out.println("inside method1");
         logger.info("Incoming request at {} for request /method1 ");
         logger.info("Incoming request at {} for request /method1 ", applicationName);
-        String response = restTemplate.getForObject(baseUrlSub, String.class);
-        return ResponseEntity.ok("response from /method1 + " + response);
+        //String response = restTemplate.getForObject(baseUrlSub, String.class);
+        return ResponseEntity.ok("response from /method1 + " + "response");
     }
 
     @GetMapping("/method2")
