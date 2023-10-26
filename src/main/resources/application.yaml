@@ -6,7 +6,7 @@ spring:
     name: app
 
 tracing:
-  url: https://jaeger-production-collector.tracing-system.svc.cluster.local:4318
+  url: http://jaeger-production-collector.tracing-system.svc.cluster.local:4318
 
 management:
   tracing:
